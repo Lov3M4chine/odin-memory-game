@@ -33,7 +33,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="m-0 max-h-full min-h-screen max-w-full bg-game-bg bg-cover p-0">
       <div className="flex flex-wrap justify-center gap-6 max-sm:w-screen max-sm:gap-3">
         <div className="rounded-xl bg-slate-800 p-3 text-6xl text-white max-sm:text-lg">
           Celestial Bodies Memory Game
@@ -65,7 +65,7 @@ function App() {
           )
         })}
       </div>
-    </>
+    </div>
   )
 }
 
