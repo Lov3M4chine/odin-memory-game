@@ -18,6 +18,9 @@ function App() {
 
   const resetGame = () => {
     reshuffleCards()
+    if (currentScore > 10) {
+      alert('Wow!!! You actually beat the game. Awesome job!')
+    }
     if (currentScore > bestScore) {
       alert('Congrats!!! You beat your high score.')
       setBestScore(currentScore)
