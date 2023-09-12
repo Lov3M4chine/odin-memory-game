@@ -15,9 +15,6 @@ export function shuffledIndices(length: number) {
   return indices
 }
 
-const imageIndices = shuffledIndices(11)
-console.log(imageIndices)
-
 export const nasaImgs = [
   { text: 'Saturn', id: 'PIA21047' },
   { text: 'Farside View of Moon', id: 'PIA00304' },

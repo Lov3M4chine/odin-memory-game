@@ -34,16 +34,15 @@ function App() {
 
   return (
     <>
-      <div className="absolute -z-10 h-screen w-screen bg-game-bg bg-cover"></div>
-      <div className="flex justify-center gap-6">
-        <div className="w-fit justify-center rounded-xl bg-slate-800 p-3 text-6xl text-white">
+      <div className="flex flex-wrap justify-center gap-6 max-sm:w-screen max-sm:gap-3">
+        <div className="rounded-xl bg-slate-800 p-3 text-6xl text-white max-sm:text-lg">
           Celestial Bodies Memory Game
         </div>
-        <div className="flex flex-col justify-center gap-1">
-          <div className="rounded-xl bg-green-400 p-2">
+        <div className="flex flex-col justify-center gap-1 max-sm:flex-row max-sm:text-xs">
+          <div className="rounded-xl bg-green-400 p-2 ">
             Current Score: {currentScore}
           </div>
-          <div className="rounded-xl bg-blue-400 p-2">
+          <div className="rounded-xl bg-blue-400 p-2 max-sm:text-xs">
             Best Score: {bestScore}
           </div>
         </div>
