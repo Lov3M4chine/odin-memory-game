@@ -1,13 +1,32 @@
+import { useState } from 'react'
+
 type CardProps = {
   imageId: string
   imageText: string
   onCardClick: () => void
+  onGameReset: () => void
 }
 
-const Card: React.FC<CardProps> = ({ imageId, imageText, onCardClick }) => {
+const Card: React.FC<CardProps> = ({
+  imageId,
+  imageText,
+  onCardClick,
+  onGameReset
+}) => {
+  const [isClicked, setIsClicked] = useState(false)
+
+  const handleCardClick = () => {
+    if (!isClicked) {
+      onCardClick()
+      setIsClicked(true)
+    } else {
+      onGameReset()
+    }
+  }
+
   return (
     <button
-      onClick={onCardClick}
+      onClick={handleCardClick}
       className="flex w-60 flex-col items-center justify-center rounded-xl bg-slate-300 p-3"
     >
       <img
