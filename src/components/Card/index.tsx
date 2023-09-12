@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type CardProps = {
+  resetKey: number
   imageId: string
   imageText: string
   onCardClick: () => void
@@ -8,12 +9,17 @@ type CardProps = {
 }
 
 const Card: React.FC<CardProps> = ({
+  resetKey,
   imageId,
   imageText,
   onCardClick,
   onGameReset
 }) => {
   const [isClicked, setIsClicked] = useState(false)
+
+  useEffect(() => {
+    setIsClicked(false)
+  }, [resetKey])
 
   const handleCardClick = () => {
     if (!isClicked) {

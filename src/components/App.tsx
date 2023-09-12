@@ -5,6 +5,7 @@ import Card from './Card'
 function App() {
   const [currentScore, setCurrentScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
+  const [resetKey, setResetKey] = useState(Date.now())
 
   const [currentIndices, setCurrentIndices] = useState(() =>
     shuffledIndices(11)
@@ -18,10 +19,14 @@ function App() {
   const resetGame = () => {
     reshuffleCards()
     if (currentScore > bestScore) {
+      alert('Congrats!!! You beat your high score.')
       setBestScore(currentScore)
+    } else {
+      alert('Oh no! Try again.')
     }
     setCurrentScore(0)
     setCurrentIndices(shuffledIndices(11))
+    setResetKey(Date.now())
   }
 
   return (
@@ -49,6 +54,7 @@ function App() {
           return (
             <Card
               key={index}
+              resetKey={resetKey}
               imageId={image.id}
               imageText={image.text}
               onCardClick={reshuffleCards}
