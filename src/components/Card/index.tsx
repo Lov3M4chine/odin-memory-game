@@ -1,18 +1,21 @@
-import React from 'react'
-
 type CardProps = {
-  index: number
+  imageId: string
+  imageText: string
+  onCardClick: () => void
 }
 
-const Card: React.FC<CardProps> = ({ index }) => {
+const Card: React.FC<CardProps> = ({ imageId, imageText, onCardClick }) => {
   return (
-    <button className=" w-60 rounded-xl bg-slate-300 p-3">
+    <button
+      onClick={onCardClick}
+      className="flex w-60 flex-col items-center justify-center rounded-xl bg-slate-300 p-3"
+    >
       <img
-        className=""
-        src="https://images-assets.nasa.gov/image/PIA21047/PIA21047~orig.jpg"
-        alt={`Staring at Saturn ${index}`}
+        className="h-52"
+        src={`https://images-assets.nasa.gov/image/${imageId}/${imageId}~orig.jpg`}
+        alt={imageText}
       />
-      <p className="flex justify-center pt-2">Staring at Saturn</p>
+      <p className="mt-auto pt-2">{imageText}</p>
     </button>
   )
 }

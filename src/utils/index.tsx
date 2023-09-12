@@ -1,5 +1,3 @@
-import Card from 'components/Card/index'
-
 export function classNames(...classes: unknown[]): string {
   return classes.filter(Boolean).join(' ')
 }
@@ -20,20 +18,16 @@ export function shuffledIndices(length: number) {
 const imageIndices = shuffledIndices(11)
 console.log(imageIndices)
 
-const nasaImgs = [
-  { Saturn: 'PIA21047' },
-  { 'Farside View of Moon': 'PIA00304}' },
-  { Mercury: 'PIA11245' },
-  { 'Venus Ultra-Violet': 'PIA00271' },
-  { 'Venus Computer Simulated': 'PIA00271' },
-  { 'Earth and Moon': 'PIA00342' },
-  { Jupiter: 'PIA01370' },
-  { Uranus: 'PIA18182' },
-  { Neptune: 'PIA00046' },
-  { 'Neptune Rings': 'PIA01493' },
-  { Pluto: 'PIA19708' }
+export const nasaImgs = [
+  { text: 'Saturn', id: 'PIA21047' },
+  { text: 'Farside View of Moon', id: 'PIA00304' },
+  { text: 'Mercury', id: 'PIA11245' },
+  { text: 'Venus Ultra-Violet', id: 'PIA01544' },
+  { text: 'Venus Computer Simulated', id: 'PIA00271' },
+  { text: 'Earth and Moon', id: 'PIA00342' },
+  { text: 'Jupiter', id: 'PIA01370' },
+  { text: 'Uranus', id: 'PIA18182' },
+  { text: 'Neptune', id: 'PIA00046' },
+  { text: 'Neptune Rings', id: 'PIA01493' },
+  { text: 'Pluto', id: 'PIA19708' }
 ]
-
-export function generateCards() {
-  return imageIndices.map((index) => <Card key={index} index={index} />)
-}
